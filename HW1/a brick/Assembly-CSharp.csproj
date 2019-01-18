@@ -63,16 +63,16 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\BrickGenerator.cs" />
     <Reference Include="UnityEditor.StandardEvents">
-      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/CSE167/HW1/a brick/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
+      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/HW1/a brick/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/CSE167/HW1/a brick/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/HW1/a brick/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/CSE167/HW1/a brick/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/HW1/a brick/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/CSE167/HW1/a brick/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/HW1/a brick/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -258,7 +258,7 @@
       <HintPath>/Applications/Unity/Unity.app/Contents/Managed/Unity.Locator.dll</HintPath>
     </Reference>
     <Reference Include="Facebook.Unity.Settings">
-      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/CSE167/HW1/a brick/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
+      <HintPath>/Users/yifanxu/Data/1_UCSD/course/2019winter/CSE165/Unity/HW1/a brick/Library/FacebookSDK/Facebook.Unity.Settings.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
       <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

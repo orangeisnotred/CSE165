@@ -31,19 +31,19 @@ public class BrickGenerator : MonoBehaviour {
 
 
                 int offset = height % 2;
-                float r = 20;
+                float r = 3;
                 if(offset == 0)
                 {
                     float x = Mathf.Sin(i * 360 / num * Mathf.Deg2Rad) * r;
                     float z = Mathf.Cos(i * 360 / num * Mathf.Deg2Rad) * r;
-                    brick.transform.position = new Vector3(x, height+1, z);
+                    brick.transform.position = new Vector3(x, (float)(height * 0.15), z);
                     brick.transform.Rotate(new Vector3(0, i * 360 / num, 0));
                 }
                 if(offset == 1)
                 {
                     float x = Mathf.Sin((i * 360 / num + 360 / num / 2) * Mathf.Deg2Rad) * r;
                     float z = Mathf.Cos((i * 360 / num + 360 / num / 2) * Mathf.Deg2Rad) * r;
-                    brick.transform.position = new Vector3(x,height+1,z);
+                    brick.transform.position = new Vector3(x,(float)(height*0.15),z);
                     brick.transform.Rotate(new Vector3(0, (i * 360 / num + 360 / num / 2), 0));
                 }
 
