@@ -6,6 +6,8 @@ TagManager:
   tags:
   - testCube
   - brick
+  - Sky
+  - ground
   layers:
   - Default
   - TransparentFX
