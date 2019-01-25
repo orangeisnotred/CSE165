@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a brick", "Assembly-CSharp.csproj", "{240BC9B9-F491-3D95-D49C-2969662F9200}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp", "Assembly-CSharp.csproj", "{240BC9B9-F491-3D95-D49C-2969662F9200}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a brick", "Oculus.VR.csproj", "{20281AFC-662A-70A5-FBEC-AD930EB4142C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oculus.VR", "Oculus.VR.csproj", "{20281AFC-662A-70A5-FBEC-AD930EB4142C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a brick", "Assembly-CSharp-Editor.csproj", "{82178166-4FF7-C5D2-6620-4DF2633278C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Assembly-CSharp-Editor", "Assembly-CSharp-Editor.csproj", "{82178166-4FF7-C5D2-6620-4DF2633278C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a brick", "Oculus.VR.Scripts.Editor.csproj", "{57F5679C-7354-1899-8BDB-E3DA01C4A65F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oculus.VR.Scripts.Editor", "Oculus.VR.Scripts.Editor.csproj", "{57F5679C-7354-1899-8BDB-E3DA01C4A65F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "a brick", "Oculus.VR.Editor.csproj", "{AA9B782A-74AB-8B03-DF5F-54165D7D231B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Oculus.VR.Editor", "Oculus.VR.Editor.csproj", "{AA9B782A-74AB-8B03-DF5F-54165D7D231B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

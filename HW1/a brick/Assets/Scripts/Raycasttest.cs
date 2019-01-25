@@ -43,18 +43,21 @@ public class Raycasttest : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-
+        k = 0.1f;
         RaycastHit hit = new RaycastHit();
-       
-      
-        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.yellow);
+        if (brick != null && !locked)
+            brick.GetComponent<Renderer>().material.color = original;
 
-        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward) * 10, out hit, 5000))
+        Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * 10, Color.yellow);
+        
+        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward) * 10, out hit, 5000) || locked)
         {
+          
+
 
             if (hit.transform.tag == "brick")
             {
-                loading.fillAmount += 1.0f / filltime * Time.deltaTime;
+                loading.fillAmount += 1.0f / filltime * Time.deltaTime; //fills bar
                 rend = hit.collider.gameObject.GetComponent<Renderer>();
                 original = rend.material.color;
                 if (!locked)
@@ -90,7 +93,7 @@ public class Raycasttest : MonoBehaviour {
 
 
 
-                if (Time.time - locktime >= 2)// || locked) //if looking at the same brick for 3 seconds
+                if (Time.time - locktime >= 2 || locked) //if looking at the same brick for 3 seconds
                 {
                     locked = true;
                     loading.enabled = false;
@@ -99,15 +102,24 @@ public class Raycasttest : MonoBehaviour {
                     {
                         brick.GetComponent<Renderer>().material.color = Color.blue;
 
+                        if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward) * 10, out hit, 5000))
+                        {
+                            if (hit.transform.tag == "brick")
+                            {
+                                k = Vector3.Distance(hit.transform.position, brick.transform.position) / Vector3.Distance(brick.transform.position, transform.position);
+                            }
+                        }
 
-                        k = Vector3.Distance(hit.transform.position, brick.transform.position) / Vector3.Distance(brick.transform.position, transform.position);
+                           
+                        
                         if (k <= 0.23)
                         {
+                            Debug.Log("moving");
                             float Rad = Mathf.Atan(brick.transform.position.x / brick.transform.position.z);
                             float distance = Vector3.Distance(currHeadPostion, transform.position);
-                            Debug.Log("currHeadPostion" + currHeadPostion);
-                            Debug.Log("transform.position" + transform.position);
-                            Debug.Log("distance.position" + distance);
+                          //  Debug.Log("currHeadPostion" + currHeadPostion);
+                            //Debug.Log("transform.position" + transform.position);
+                            //Debug.Log("distance.position" + distance);
                             r = Mathf.Sqrt(brick.transform.position.x * brick.transform.position.x + brick.transform.position.z * brick.transform.position.z);
                             if (distance >= 0.03)
                             {
@@ -178,37 +190,53 @@ public class Raycasttest : MonoBehaviour {
 
             }
 
+            else
+            {
+                loading.fillAmount = 0.0f;
+                locktime = Time.time;
+                explosiontime = Time.time;
+
+            }
+
             if (hit.transform.tag == "Sky")
             {
-                Debug.Log("sky was looked at");
+               // Debug.Log("sky was looked at");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
 
-            if (hit.transform.tag == "ground")
-            {
-                float tempY = transform.parent.transform.position.y;
-                groundcounter++;
-                if (groundcounter == 120)
-                {
-                    Vector3 pos = hit.point;
-                    pos.y = tempY;
-                    transform.parent.transform.position = pos;
-                    groundcounter = 0;
+            //if (hit.transform.tag == "ground")    //TELEPORTATION
+            //{
+            //    float tempY = transform.parent.transform.position.y;
+            //    groundcounter++;
+            //    if (groundcounter == 120)
+            //    {
+            //        Vector3 pos = hit.point;
+            //        pos.y = tempY;
+            //        transform.parent.transform.position = pos;
+            //        groundcounter = 0;
                    
                     
 
 
-                }
+            //    }
 
 
-            }
-            else
-            {
-                groundcounter = 0;
-            }
+            //}
+            //else
+            //{
+            //    groundcounter = 0;
+            //}
         }
+        else
+        {
+            loading.fillAmount = 0.0f;
+            locktime = Time.time;
+            explosiontime = Time.time;
+        }
+ 
     }
 
-    
+
+
 }

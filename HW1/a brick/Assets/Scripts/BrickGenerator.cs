@@ -14,7 +14,7 @@ public class BrickGenerator : MonoBehaviour {
 
         float num = 60;
         for (int i = 0; i < num; i++){
-            for (int height = 0; height < 50; height++){
+            for (int height = 0; height < 30; height++){
                 GameObject brick;
                 if (i*height%3 == 0)
                 {
