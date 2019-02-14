@@ -24,11 +24,15 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        LeftHand = GameObject.Find("Left Interaction Hand Contact Bones");
-        LeftPalm = LeftHand.transform.GetChild(LeftHand.transform.childCount - 1);
-        RightHand = GameObject.Find("Right Interaction Hand Contact Bones");
-        RightPinky = RightHand.transform.GetChild(LeftHand.transform.childCount - 2);
-        Debug.Log(RightPinky.localRotation.eulerAngles.x);
+		
+		LeftHand = GameObject.Find("Left Interaction Hand Contact Bones");
+		if (LeftHand != null)
+			LeftPalm = LeftHand.transform.GetChild(LeftHand.transform.childCount - 1);
+		
+		RightHand = GameObject.Find("Right Interaction Hand Contact Bones");
+		if (RightHand != null)
+			RightPinky = RightHand.transform.GetChild(LeftHand.transform.childCount - 2);
+        //Debug.Log(RightPinky.localRotation.eulerAngles.x);
         if (LeftHand && RightHand)
         {
             fingerRot = RightHand.transform.GetChild(5).localRotation;
