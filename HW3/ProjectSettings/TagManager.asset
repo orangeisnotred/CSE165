@@ -8,6 +8,9 @@ TagManager:
   - chair
   - ground
   - checkpoint
+  - collision
+  - current
+  - WayFinding2
   layers:
   - Default
   - TransparentFX

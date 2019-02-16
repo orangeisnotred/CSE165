@@ -1,9 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Movement.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\sample.txt.txt">
     <Files>
-      <File FileName="Assets\Parser.cs" Line="37" Column="1" />
-      <File FileName="Assets\Movement.cs" Line="28" Column="1" />
+      <File FileName="Assets\Parser.cs" Line="1" Column="1" />
+      <File FileName="Assets\Movement.cs" Line="1" Column="1" />
+      <File FileName="Assets\wayfingding2D.cs" Line="30" Column="1" />
+      <File FileName="Assets\sample.txt.txt" Line="1" Column="18" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -61,6 +61,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\checkPointGot.cs" />
+    <Compile Include="Assets\CountDown.cs" />
+    <Compile Include="Assets\countDownAudio.cs" />
+    <Compile Include="Assets\Finished.cs" />
+    <Compile Include="Assets\height.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\InertiaPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Examples\Example Assets\ProjectionPostProcessProvider.cs" />
     <Compile Include="Assets\LeapMotion\Core\Plugins\LeapCSharp\Arm.cs" />
@@ -584,6 +589,7 @@
     <Compile Include="Assets\Oculus\VoiceMod\Scripts\OVRVoiceModContext.cs" />
     <Compile Include="Assets\Parser.cs" />
     <Compile Include="Assets\QuickOutline\Scripts\Outline.cs" />
+    <Compile Include="Assets\rot.cs" />
     <Compile Include="Assets\Scripts\Raycasttest.cs" />
     <Compile Include="Assets\Scripts\uparrow.cs" />
     <Compile Include="Assets\Tigger.cs" />
@@ -606,7 +612,6 @@
     <None Include="Assets\LeapMotion\Core\Dependencies.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\ThresholdOverlay.shader" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderSelfOccluding.shader" />
-    <None Include="Assets\sample.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBS.shader" />
     <None Include="Assets\Oculus\Avatar\Samples\SocialStarter\README.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\PassthroughForeground.shader" />
@@ -621,7 +626,6 @@
     <None Include="Assets\Oculus\Avatar\Resources\Materials\AvatarSurfaceShaderPBSV2.shader" />
     <None Include="Assets\LeapMotion\Core\Version.txt" />
     <None Include="Assets\LeapMotion\Core\Shaders\VertexOffsetShader.shader" />
-    <None Include="Assets\sample.txt.txt" />
     <None Include="Assets\Oculus\Avatar\Samples\CrossPlatform\Readme.txt" />
     <None Include="Assets\Oculus\Avatar\Resources\Materials\Version1.5\Avatar_Mobile_SingleComponent.shader" />
     <None Include="Assets\Oculus\SampleFramework\Core\Locomotion\Materials\ColumnGlow.shader" />
@@ -630,19 +634,19 @@
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\ToyCubeWithOutline.shader" />
     <None Include="Assets\Oculus\SampleFramework\Usage\DistanceGrab\Materials\CrosshairZCheat.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.PackageManagerUI.Editor">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/ScriptAssemblies/Unity.PackageManagerUI.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.DataPrivacy">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/ScriptAssemblies/Unity.Analytics.DataPrivacy.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>
@@ -846,16 +850,16 @@
       <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/UnitySpatialTracking/RuntimeEditor/UnityEngine.SpatialTracking.dll</HintPath>
     </Reference>
     <Reference Include="InteractionEngineUtility">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Assets/LeapMotion/Modules/InteractionEngine/Plugins/InteractionEngineUtility.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Editor">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.StandardEvents">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.StandardEvents.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Analytics.Tracker">
-      <HintPath>C:/Users/yix247/DESKTOP/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
+      <HintPath>C:/Users/yix247/Downloads/CSE165-Gio/HW3/Library/PackageCache/com.unity.analytics@3.2.2/Unity.Analytics.Tracker.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:/Program Files/Unity/Editor/Data/MonoBleedingEdge/lib/mono/unity/mscorlib.dll</HintPath>
