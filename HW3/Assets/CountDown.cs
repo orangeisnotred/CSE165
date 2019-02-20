@@ -20,7 +20,7 @@ public class CountDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        // print("Canmooooo:" + CanMove);
         timer = timerFl.ToString();
         countDownStr = timeLeft.ToString();
 

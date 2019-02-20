@@ -13,13 +13,15 @@ public class wayfingding2D : MonoBehaviour
 	public float heightDiff;
 	
 	float distance;
-	
+	Vector3 PreviousPosition;
+	float disForV;
 	//private var gameObjects : GameObject[];
 	
     // Start is called before the first frame update
     void Start()
     {
         // airplane = GameObject.Find("/Canvas/airplane");
+		PreviousPosition = transform.position;
     }
 
     // Update is called once per frame
@@ -56,6 +58,10 @@ public class wayfingding2D : MonoBehaviour
 		}
 		
 		
+		disForV = Vector3.Distance(transform.position,PreviousPosition);
+		Debug.Log("THHHHHHIS: "+disForV);
+		GetComponent<AudioSource>().pitch = 0.1f + disForV*0.5f;
+		PreviousPosition = transform.position;
 		
 		
 		//nextCP = GameObject.Find("/checkpoint"+(lineCount-2).ToString());
