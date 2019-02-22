@@ -11,8 +11,6 @@ TagManager:
   - collision
   - current
   - WayFinding2
-  - normalPlayMode
-  - hearingPlayMode
   layers:
   - Default
   - TransparentFX

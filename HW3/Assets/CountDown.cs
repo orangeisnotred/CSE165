@@ -20,12 +20,15 @@ public class CountDown : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // print("Canmooooo:" + CanMove);
+        
         timer = timerFl.ToString();
         countDownStr = timeLeft.ToString();
 
         if (timeLeft > 0)/////COUNTDOWN
         {
+      
+
+
             timeLeft -= Time.deltaTime;
 			transform.GetComponent<Text>().fontSize  = 50;
             transform.GetComponent<Text>().text = countDownStr[0].ToString();

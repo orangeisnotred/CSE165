@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
 
     Quaternion fingerRot;
+    Quaternion indexRot;
     GameObject LeftHand;
     GameObject RightHand;
     GameObject Tracker;
@@ -16,39 +17,43 @@ public class Movement : MonoBehaviour
     Quaternion initialRot;
     Quaternion newRot;
     bool stored = false;
-	
-	
-	Vector3 rot_pre;
-	Vector3 rot_now;
-	float pitch_pre;
-	float pitch_now;
-	public AudioClip MotorClip;
-	public AudioSource MotorSource;
-	bool MotorSound = false;
-	float t;
-	
+
+
+    Vector3 rot_pre;
+    Vector3 rot_now;
+    float pitch_pre;
+    float pitch_now;
+    public AudioClip MotorClip;
+    public AudioSource MotorSource;
+    bool MotorSound = false; 
+    float t;
+
     void Start()
     {
-		rot_pre = (transform.localRotation).eulerAngles;
-		MotorSource.clip = MotorClip;
+        rot_pre = (transform.localRotation).eulerAngles;
+        MotorSource.clip = MotorClip;
 
     }
 
     // Update is called once per frame
     void Update()
     {
-		
-		
-		
+
+
+
         LeftHand = GameObject.Find("Left Interaction Hand Contact Bones");
-        LeftPalm = LeftHand.transform.GetChild(15);
+        
         RightHand = GameObject.Find("Right Interaction Hand Contact Bones");
-        RightPinky = RightHand.transform.GetChild(14);
        
+        
+
 
         if (LeftHand && RightHand && CountDown.CanMove)
         {
-            fingerRot = RightHand.transform.GetChild(5).localRotation;
+            LeftPalm = LeftHand.transform.GetChild(15);
+            RightPinky = RightHand.transform.GetChild(14);
+            indexRot = RightHand.transform.GetChild(5).localRotation;
+            fingerRot = RightHand.transform.GetChild(8).localRotation;
             // Debug.Log(fingerRot.eulerAngles.x);
             if (fingerRot.eulerAngles.x < 150)
             {
@@ -77,7 +82,7 @@ public class Movement : MonoBehaviour
 
                 //  transform.position = pos;
 
-                Quaternion finRot = (Quaternion.Slerp(transform.rotation, transform.rotation * diff, 0.01f));
+                Quaternion finRot = (Quaternion.Slerp(transform.rotation, transform.rotation * diff, 0.02f));
                 transform.rotation = finRot;
 
                 //////////////////POSITION///////////////////
@@ -92,33 +97,33 @@ public class Movement : MonoBehaviour
                 pos = Vector3.Normalize(pos);
 
 
-                pos = diff2 * (pos * (30 * (RightPinky.localRotation.eulerAngles.x / 150)));
-
+                pos = diff2 * (pos * Mathf.Max(40.0f, (80 * Mathf.Min(1.0f, (RightPinky.localRotation.eulerAngles.x / 250)) * (indexRot.eulerAngles.x / 40))));/////SPEED/////////////////////////////
+                Debug.Log(RightPinky.localRotation.eulerAngles.x / 250);
                 pos2 = transform.position;
 
                 pos2 = pos2 + (pos * Time.deltaTime);
 
                 transform.position = pos2;
-				
-				Vector3 temp = pos * Time.deltaTime;
-				
-				rot_now = (transform.localRotation).eulerAngles;
-				if(Mathf.Abs(rot_now.x - rot_pre.x)>=0.4 && Mathf.Max(temp.x,temp.y,temp.z)>0.4 && !MotorSound)
-				{
-					MotorSource.Play();
-					MotorSound = true;
-					t = Time.time;
-				}
-				if(Time.time - t >10)
-				{
-					MotorSound = false;
-				}
-				
-				
-				Debug.Log("Pitch: "+(rot_now - rot_pre));
-				//Debug.Log("V: "+(pos * Time.deltaTime));
 
-				rot_pre = rot_now;
+                Vector3 temp = pos * Time.deltaTime;
+
+                rot_now = (transform.localRotation).eulerAngles;
+                if (Mathf.Abs(rot_now.x - rot_pre.x) >= 0.4 && Mathf.Max(temp.x, temp.y, temp.z) > 0.4 && !MotorSound)
+                {
+                    MotorSource.Play();
+                    MotorSound = true;
+                    t = Time.time;
+                }
+                if (Time.time - t > 10)
+                {
+                    MotorSound = false;
+                }
+
+
+
+                //Debug.Log("V: "+(pos * Time.deltaTime));
+
+                rot_pre = rot_now;
 
 
             }
